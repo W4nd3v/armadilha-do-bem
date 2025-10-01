@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Segurança</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffebee;
+            color: #c62828;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #c62828;
+        }
+        h1 {
+            color: #c62828;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .alert-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .counter {
+            background-color: #ffcdd2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .warning {
+            background-color: #fff3e0;
+            color: #ef6c00;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 3px solid #ef6c00;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .stats-link {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="alert-icon">⚠️</div>
+        <h1>ATENÇÃO!</h1>
+        
+        <div class="message">
+            <p><strong>Você acabou de cair em um golpe!</strong></p>
+            <p>Este é um teste de conscientização sobre segurança digital.</p>
+        </div>
+
+        <div class="counter">
+            {% if total_acessos > 1 %}
+                <p>Já é a <strong>{{ vezes }}</strong> vez que você cai num golpe só <strong>{{ periodo }}</strong>!</p>
+                <p>Total de acessos: <strong>{{ total_acessos }}</strong></p>
+                <p>Primeiro acesso: <strong>{{ primeiro_acesso|date:"d/m/Y H:i" }}</strong></p>
+            {% else %}
+                <p>Esta foi sua primeira vez caindo em um golpe!</p>
+                <p><strong>Cuidado com links suspeitos!</strong></p>
+            {% endif %}
+        </div>
+
+        <div class="warning">
+            <p><strong>Lições importantes:</strong></p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Não clique em links de emails suspeitos</li>
+                <li>Verifique sempre o remetente do email</li>
+                <li>Desconfie de ofertas muito boas</li>
+                <!-- <li>Erros de Português - Gramática e formatação ruins</li> -->
+                <li>Cuidado com mensagens como: "Clique agora", "Não perca"</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Esta é uma simulação educativa para promover a segurança digital.</p>
+            <!-- <p><small>Seu IP: {{ ip }}</small></p> -->
+            
+            <!-- <a href="{#% url 'trap:estatisticas' %}" class="stats-link">
+                Ver Estatísticas Gerais
+            </a> -->
+        </div>
+    </div>
+</body>
+</html>
